@@ -1,6 +1,7 @@
 /* Main transformation applied to the entire body to give it a tilted effect */
 body {
     transform: skewX(-10deg) rotate(-10deg);
+    
   }
   
   /* Styles for various headers */
@@ -47,4 +48,23 @@ body {
   .email-link a:hover {
     text-decoration: none; /* Removing underline on hover for aesthetic */
   }
-  
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+body  {
+  font-family: 'Josefin Sans', sans-serif;
+}
+main {
+  background-color: mediumaquamarine;
+  height: 90vh;
+  width: 100vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+main > div {
+  width: 40%;
+  margin: auto;
+  padding: 10%;
+}
+
