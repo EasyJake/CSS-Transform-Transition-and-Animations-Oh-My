@@ -1,12 +1,13 @@
-/* Imported font from Google Fonts */
+/* Importing required font for styling */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
-/* Base styling */
-body  {
+/* Base body styling */
+body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: gainsboro;
 }
-.container  {
+
+.container {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -28,56 +29,33 @@ body  {
   height: 10px;
   width: 70%;
   margin: auto;
+  transition: transform 1s;
 }
 
-/* Styling for the hover state of the hamburger menu */
-.hamburger:hover > div:nth-child(1){
+/* Animation for creating a centered 'X' character */
+.hamburger:hover > div:nth-child(1) {
+  transform: translateY(56px) rotate(45deg);
   background-color: ghostwhite;
-  animation-name: top;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
 }
 
-.hamburger:hover > div:nth-child(2){
-  animation-name: middle;
-  animation-duration: .1s;
-  animation-fill-mode: forwards;
+.hamburger:hover > div:nth-child(2) {
+  opacity: 0;
 }
 
-.hamburger:hover > div:nth-child(3){
+.hamburger:hover > div:nth-child(3) {
+  transform: translateY(-15px) rotate(-45deg);
   background-color: ghostwhite;
-  animation-name: bottom;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
 }
 
-/* Animation for the menu */
-@keyframes top {
-  from { transform: translateY(0); }
-  to { transform: translateY(10px) rotate(45deg); }
-}
-
-@keyframes middle {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-@keyframes bottom {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px) rotate(-45deg); }
-}
-
-/* Styling for the navigation menu */
 nav {
   opacity: 0;
-  transition-duration: 1s;
+  transition: opacity 1s;
 }
 
 .hamburger:hover ~ nav {
   opacity: 1;
 }
 
-/* Styling for the navigation links */
 li {
   list-style-type: none;
   margin-bottom: 1em;
