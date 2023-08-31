@@ -32,41 +32,68 @@ body {
   transition: transform 1s;
 }
 
+
 /* Animation for creating a centered 'X' character */
+
+/* This targets the top bar of the hamburger icon when it's hovered upon. */
 .hamburger:hover > div:nth-child(1) {
-  transform: translateY(56px) rotate(45deg);
+  /* `translateY` moves the top bar downward by 45px. */
+  /* `rotate` rotates the bar 45 degrees to form one side of the 'X'. */
+  transform: translateY(33px) rotate(45deg);
+
+  /* Changes the color of the top bar to ghostwhite when hovered. */
   background-color: ghostwhite;
 }
 
+/* This targets the middle bar of the hamburger icon when it's hovered upon. */
 .hamburger:hover > div:nth-child(2) {
+  /* `opacity` set to 0 makes the middle bar disappear, thus leaving only the top and bottom bars to form the 'X'. */
   opacity: 0;
 }
 
+/* This targets the bottom bar of the hamburger icon when it's hovered upon. */
 .hamburger:hover > div:nth-child(3) {
-  transform: translateY(-15px) rotate(-45deg);
+  /* `translateY` moves the bottom bar upward by 15px. */
+  /* `rotate` rotates the bar -45 degrees (in the opposite direction of the top bar) to complete the other side of the 'X'. */
+  transform: translateY(-33px) rotate(-45deg);
+
+  /* Changes the color of the bottom bar to ghostwhite when hovered. */
   background-color: ghostwhite;
 }
 
+/* Base style for the navigation. It's initially invisible due to the `opacity` set to 0. */
 nav {
-  opacity: 0;
-  transition: opacity 1s;
+  opacity: 0; /* Makes the element fully transparent. */
+  transition: opacity 1s; /* This makes any change in opacity animate over 1 second. */
 }
 
+/* This makes the navigation visible when the hamburger icon is hovered upon. */
 .hamburger:hover ~ nav {
-  opacity: 1;
+  opacity: 1; /* Makes the element fully visible. */
 }
 
+/* Styling for list items (li) within the navigation. */
 li {
+  /* Removes the default bullet points in front of list items. */
   list-style-type: none;
+
+  /* Adds a space below each list item for better readability. */
   margin-bottom: 1em;
 }
 
+/* Styling for anchor tags (links) within the navigation. */
 a {
+  /* Removes the underline typically found under links. */
   text-decoration: none;
+
+  /* Sets the color of the link text. */
   color: rebeccapurple;
+
+  /* Adds a shadow behind the link text for a subtle effect. */
   text-shadow: 1px 1px 2px darkgrey;
 }
 
+/* Changes the color of the link when it's hovered upon. */
 a:hover {
   color: ghostwhite;
 }
