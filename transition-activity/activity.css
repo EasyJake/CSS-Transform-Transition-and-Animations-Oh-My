@@ -1,59 +1,82 @@
+/* Importing required font for styling */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
-/* transition-activity.  *//* Setting general styles for the whole document */
+/* Setting general styles for the whole document */
 body {
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #eee; 
-  }
-  
-  /* Setting the container's styles */
-  .container {
+    background-color: #eee;
+}
+
+/* Setting the container's styles */
+.container {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Styling the caption and its contents */
-  .caption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+/* Styling the caption and its contents */
+.caption {
     width: 80%;
     margin: auto;
     overflow: hidden;
-  }
-  
-  /* Setting image properties */
-  img {
+    position: relative;
+}
+
+/* Setting image properties */
+img {
     width: 80%;
-    border-radius: 10px; 
-  }
-  
-  /* Initial button styles */
-  .transform {
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.caption-text {
+    position: absolute;
+    bottom: -100%;
+    left: 10%;
+    width: 80%;
+    transform: translateY(0);
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: ghostwhite;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 1s;
+}
+
+.caption:hover .caption-text {
+    transform: translateY(-100%);
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Button styles */
+button {
     border: none;
     padding: 1em;
-    margin: 0.2em;
+    margin: .2em;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5em;
-    background-color: ghostwhite; 
+    background-color: ghostwhite;
     cursor: pointer;
     color: black;
-    transition: background-color 2s, color 2s; 
-  }
-  
-  /* Styles for button on hover */
-  .transform:hover {
+    transition: background-color 2s, color 2s;
+}
+
+button:hover {
     background-color: cornflowerblue;
     color: ghostwhite;
-  }
-  
-  /* Link styling */
-  a {
+}
+
+/* Link styling */
+a {
     color: cornflowerblue;
     text-decoration: none;
-  }
-  
+}
