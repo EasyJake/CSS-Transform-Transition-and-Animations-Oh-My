@@ -1,7 +1,5 @@
-/* Importing required font for styling */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
-/* Base body styling */
 body {
   font-family: 'Josefin Sans', sans-serif;
   background-color: gainsboro;
@@ -29,71 +27,69 @@ body {
   height: 10px;
   width: 70%;
   margin: auto;
-  transition: transform 1s;
 }
 
-
-/* Animation for creating a centered 'X' character */
-
-/* This targets the top bar of the hamburger icon when it's hovered upon. */
+/* Describing how the top bar behaves when the hamburger is hovered over */
 .hamburger:hover > div:nth-child(1) {
-  /* `translateY` moves the top bar downward by 45px. */
-  /* `rotate` rotates the bar 45 degrees to form one side of the 'X'. */
-  transform: translateY(33px) rotate(45deg);
-
-  /* Changes the color of the top bar to ghostwhite when hovered. */
   background-color: ghostwhite;
+  animation-name: top;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
-/* This targets the middle bar of the hamburger icon when it's hovered upon. */
+/* Describing how the middle bar behaves when the hamburger is hovered over */
 .hamburger:hover > div:nth-child(2) {
-  /* `opacity` set to 0 makes the middle bar disappear, thus leaving only the top and bottom bars to form the 'X'. */
-  opacity: 0;
+  animation-name: middle;
+  animation-duration: .1s;
+  animation-fill-mode: forwards;
 }
 
-/* This targets the bottom bar of the hamburger icon when it's hovered upon. */
+/* Describing how the bottom bar behaves when the hamburger is hovered over */
 .hamburger:hover > div:nth-child(3) {
-  /* `translateY` moves the bottom bar upward by 15px. */
-  /* `rotate` rotates the bar -45 degrees (in the opposite direction of the top bar) to complete the other side of the 'X'. */
-  transform: translateY(-33px) rotate(-45deg);
-
-  /* Changes the color of the bottom bar to ghostwhite when hovered. */
   background-color: ghostwhite;
+  animation-name: bottom;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
-/* Base style for the navigation. It's initially invisible due to the `opacity` set to 0. */
+/* The actual animation for the top bar */
+@keyframes top {
+  from {transform: rotate(0)}
+  to {transform: translateY(34px) rotate(45deg);}
+}
+
+/* The actual animation for the middle bar */
+@keyframes middle {
+  from {opacity: 1}
+  to {opacity: 0}
+}
+
+/* The actual animation for the bottom bar */
+@keyframes bottom {
+  from {transform: rotate(0)}
+  to {transform: translateY(-33px) rotate(-45deg);}
+}
+
 nav {
-  opacity: 0; /* Makes the element fully transparent. */
-  transition: opacity 1s; /* This makes any change in opacity animate over 1 second. */
+  opacity: 0;
+  transition-duration: 1s;
 }
 
-/* This makes the navigation visible when the hamburger icon is hovered upon. */
 .hamburger:hover ~ nav {
-  opacity: 1; /* Makes the element fully visible. */
+  opacity: 1;
 }
 
-/* Styling for list items (li) within the navigation. */
 li {
-  /* Removes the default bullet points in front of list items. */
   list-style-type: none;
-
-  /* Adds a space below each list item for better readability. */
   margin-bottom: 1em;
 }
 
-/* Styling for anchor tags (links) within the navigation. */
 a {
-  /* Removes the underline typically found under links. */
   text-decoration: none;
-
-  /* Sets the color of the link text. */
   color: rebeccapurple;
-
-  /* Adds a shadow behind the link text for a subtle effect. */
   text-shadow: 1px 1px 2px darkgrey;
 }
 
-/* Changes the color of the link when it's hovered upon. */
 a:hover {
   color: ghostwhite;
 }
